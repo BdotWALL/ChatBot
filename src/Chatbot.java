@@ -7,7 +7,9 @@ public class Chatbot {
     static int answer3;
     static String answer2;
     static String age1;
+    static String str1;
     static String age2;
+    static String str2;
     static int num1;
 
     public static void main(String[] args) throws Exception {
@@ -17,7 +19,7 @@ public class Chatbot {
         counting();
         knowledgeCheck();
         storyTime();
-        dayOfWeek();
+        dayOfWeek();;
     }
 
 // 1. Greeting the user
@@ -86,10 +88,10 @@ public class Chatbot {
         int ageNumber1 = birthdayPassed - answer3;
         int ageNumber2 = birthdayHasntPassed - answer3;
         String s1 = String.valueOf(ageNumber1);
-        String str1 = s1.substring(1, s1.length() - 0);
+         str1 = s1.substring(1, s1.length() - 0);
         age1 = str1;
         String s2 = String.valueOf(ageNumber2);
-        String str2 = s2.substring(1, s2.length() - 0);
+         str2 = s2.substring(1, s2.length() - 0);
         age2 = str2;
 
         if (answer2.equals( "yes")) {
@@ -129,11 +131,8 @@ public class Chatbot {
         int startCount = input.nextInt();
         System.out.println(question2);
         int endCount = input.nextInt();
-        System.out.println("Ok, here we go...");
 
-        int start = startCount ;
-        int end = endCount ;
-        for (int i = start; i <= end; i++) {
+        for (int i = startCount; i <= endCount; i++) {
             System.out.println(i);
 
         }
@@ -171,6 +170,57 @@ public class Chatbot {
                 }     
 
         }
+System.out.println("Next question. . . ");
+        String choiceA2 = "a) William Richards";
+        String choiceB2 = "b) Carl Dalton";
+        String choiceC2 = "c) John Peters";
+        String choiceD2 = "d) James Gosling";
+        String question2 = "Who made Java? "+ "\n"  + choiceA2
+        + "\n"  + choiceB2 + "\n"  + choiceC2+ "\n"  + choiceD2 ;
+
+        while (true){
+            System.out.println(question2);
+            String multiChoiceAnswer2 = input.nextLine(); 
+            
+            
+                if(!multiChoiceAnswer2.equals("d")) {
+                    System.out.println("Nope. Give it another try");
+                    continue;
+                }
+
+                if(multiChoiceAnswer2.equals("d")) {
+                    System.out.println("Correct! You're really smart.");
+                    break;
+                }     
+
+        }
+
+        System.out.println("Next question. . . ");
+        String choiceA3 = "a) CoCo";
+        String choiceB3 = "b) Oak";
+        String choiceC3 = "c) Express";
+        String choiceD3 = "d) Zeon";
+        String question3 = "What was the original name of Java? "+ "\n"  + choiceA3
+        + "\n"  + choiceB3 + "\n"  + choiceC3+ "\n"  + choiceD3 ;
+
+        while (true){
+            System.out.println(question3);
+            String multiChoiceAnswer3 = input.nextLine(); 
+            
+            
+                if(!multiChoiceAnswer3.equals("b")) {
+                    System.out.println("Nope. Give it another try");
+                    continue;
+                }
+
+                if(multiChoiceAnswer3.equals("b")) {
+                    System.out.println("Correct! You're really smart.");
+                    break;
+                }     
+
+        }
+
+
     }
 
 // Optional: Story Time
@@ -186,68 +236,73 @@ public static void storyTime() {
     }
 
 
-   String story1 = "  ''There once was a human born in " + answer3 + ". " + "They were named" + name + "." + "A name of a champion! They would like to go out to eat " 
+   String story1 = "  ''There once was a human born in " + answer3 + ". " + "They were named " + name + "." + "A name of a champion! They would like to go out to eat " 
      + num1 + "day(s) a week. Today they are  " + "\n" 
      + age1+ ". "  + name + " is very smart; One time they passed a test by the smartest Chatbot ever made. " + "\n" + "THE END" ; 
                                  
-    String story2 =  "  ''There once was a human born in " + answer3 + ". " + "They were named" + name + "." + "A name of a champion! They would like to go out to eat " 
+    String story2 =  "  ''There once was a human born in " + answer3 + ". " + "They were named " + name + "." + "A name of a champion! They would like to go out to eat " 
     + num1 + "day(s) a week. Today they are  " + "\n" 
     + age2 + ".  "  + name + " is very smart; One time they passed a test by the smartest Chatbot ever made.'' " + "\n" + "THE END" ; 
 
 
- if (age1 !=null && ans1.equals("yes")){
+{ if (answer2.equals("yes") ){
      System.out.println(story1);
  }
-
-if (age2 !=null){
+ 
+ if(answer2.equals("no")){
     System.out.println(story2);
-}                        
+}      }                  
 
 }
 
 // Optional:Days of The Week
 public static void dayOfWeek() {
     Scanner input = new Scanner(System.in);
-    System.out.println("Care to know my personal feelings on the days?");
-    String yayOrNay = input.nextLine();
+    System.out.println("Care to know my personal feelings on the days? (Enter yes or no)");
+    String yayOrNay = input.next();
     if (yayOrNay.equals("yes")){
         System.out.println("Enter a number for the day (1-7):");
-    int dayNum = input.nextInt();
+   int dayNum = input.nextInt();
     switch (dayNum) {
         case 1:
         System.out.println("Mondays are always a drag.");
         break;
-      case 2:
+
+         case 2:
         System.out.println("Tuesday is all about tacos!");
         break;
+
         case 3:
         System.out.println("Wednesday is Hump Day! Half way thru the work week!");
         break;
-      case 4:
+
+         case 4:
         System.out.println("Thursday is the preweekend");
         break;
+
         case 5:
         System.out.println("Friday is when me and all the other bots get together.");
         break;
-      case 6:
+
+        case 6:
         System.out.println("Saturday is for sleeping in.");
         break;
+
         case 7:
         System.out.println("Sundays are for family time!");
         break;
       
       default:
         System.out.println("Weekends over Weekdays!");
-    }}else{
-        System.out.println("See ya later. ");
-    
+        break;
 
 
 
     }
-
-
+}else{
+    System.out.println("See ya later.");
 }
-}
+
+}}
 
 
